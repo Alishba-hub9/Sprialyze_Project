@@ -1,0 +1,54 @@
+@use "abstracts/colors";
+@use "abstracts/functions";
+@use "abstracts/mixins";
+
+.content-showcase-section {
+  background-color: colors.$light-section-bg;
+  position: relative;
+  padding: functions.rem(60) 0 functions.rem(80) 0;
+  .lighter-curve-showcase,
+  .sm-lighter-curve-showcase {
+    position: absolute;
+    bottom: 99%;
+    width: 100%;
+  }
+  p {
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: 400;
+  }
+  .cta-btn {
+    @include mixins.flex-container(center, center, null, 8px, null);
+    border: 2px solid colors.$highlighted-elements-color;
+    padding: functions.rem(15) 0;
+    margin-top: functions.rem(18);
+    transition: 0.2s all ease;
+    &:hover {
+      transform: translateY(-3px);
+      box-shadow: 0px 8px 6px 0px #00000014;
+    }
+    &:active {
+      transform: translateY(0);
+      box-shadow: 0px 4px 6px 0px #00000014;
+    }
+    span {
+      color: colors.$highlighted-elements-color;
+      font-size: 18px;
+    }
+  }
+}
+
+@include mixins.responsive("lg-devices") {
+  .content-showcase-section {
+    .lighter-curve-showcase {
+      width: auto;
+    }
+  }
+}
+
+@include mixins.responsive("sm-devices") {
+  .content-showcase-section {
+    background-color: colors.$accent-light-color;
+    padding: functions.rem(10) 0 functions.rem(80) 0;
+  }
+}

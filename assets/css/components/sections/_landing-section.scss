@@ -1,0 +1,28 @@
+@use "abstracts/colors";
+@use "abstracts/functions";
+@use "abstracts/mixins";
+@use "abstracts/variables";
+@use "base/globals";
+
+.landing-section {
+  position: relative;
+  background: linear-gradient(180deg, colors.$darker-sections-bg 0%, rgba(25, 77, 65, 0.7) 100%),
+    url(/assets/img/header-home-bg-img.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  .darker-curve-home,
+  .sm-darker-curve-home {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }
+}
+
+@include mixins.responsive("lg-devices") {
+  .landing-section {
+    .darker-curve-home {
+      width: auto;
+    }
+  }
+}

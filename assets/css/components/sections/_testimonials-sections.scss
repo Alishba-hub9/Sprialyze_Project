@@ -1,0 +1,161 @@
+@use "abstracts/mixins";
+@use "abstracts/colors";
+@use "abstracts/functions";
+
+.testimonials-section {
+  margin-top: -15px;
+  .owl-nav {
+    .owl-prev,
+    .owl-next {
+      width: 40px;
+      height: 40px;
+      position: absolute;
+      top: 36%;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      border: none;
+      cursor: pointer;
+
+      span {
+        display: block;
+        width: 100%;
+        height: 100%;
+        background-repeat: no-repeat;
+      }
+    }
+
+    .owl-prev {
+      left: -7%;
+
+      span {
+        background-image: url("/dist/img/prev-arrow-carousel.png");
+      }
+
+      &:hover span {
+        background-image: url("/dist/img/hover-prev-arrow-carousel.png");
+      }
+    }
+
+    .owl-next {
+      right: -8%;
+
+      span {
+        background-image: url("/dist/img/next-arrow-carousel.png");
+      }
+
+      &:hover span {
+        background-image: url("/dist/img/hover-prev-arrow-carousel.png");
+        background-size: 66% 100%;
+        transform: rotate(180deg);
+        background-position: top right;
+      }
+    }
+  }
+
+  .owl-dots {
+    text-align: center;
+    margin-top: functions.rem(45);
+
+    .owl-dot {
+      width: 16px;
+      height: 16px;
+      background-color: colors.$default-dots-bg;
+      border-radius: 50%;
+      display: inline-block;
+      margin: 0 functions.rem(20);
+      cursor: pointer;
+
+      &.active {
+        background-color: colors.$highlighted-elements-color;
+      }
+    }
+  }
+  .testimonial-wrapper {
+    @include mixins.flex-container(center, center, null, 38px, null);
+    position: relative;
+    border-radius: 20px;
+    overflow-x: hidden;
+    img {
+      height: 100%;
+      object-fit: cover;
+    }
+    .testimonial-content {
+      @include mixins.flex-container(center, null, column, 8px, null);
+      height: 100%;
+      border: 1px solid transparent;
+      background-color: colors.$darker-sections-bg;
+      padding: 0 functions.rem(47);
+      background-image: url(/dist/img/inverted-commas-testimonials.png);
+      background-position: calc(100% - 60px) 40px;
+      background-repeat: no-repeat;
+      h3 {
+        font-weight: 800;
+      }
+    }
+  }
+  h5 {
+    font-style: italic;
+    line-height: 24px;
+  }
+}
+
+@include mixins.responsive("xl-devices") {
+  .testimonials-section {
+    .testimonial-wrapper {
+      .testimonial-content {
+        padding: 0 functions.rem(16);
+        h5 {
+          line-height: 20px;
+        }
+      }
+    }
+  }
+}
+
+@include mixins.responsive("lg-devices") {
+  .testimonials-section {
+    .testimonial-wrapper {
+      .testimonial-content {
+        h5 {
+          line-height: 18px;
+          font-size: functions.rem(14);
+        }
+      }
+    }
+  }
+}
+@include mixins.responsive("md-devices") {
+  .testimonials-section {
+    .testimonial-wrapper {
+      .testimonial-content {
+        padding: functions.rem(25) functions.rem(14);
+        background-position: calc(100% - 60px) 6px;
+        h5 {
+          line-height: 20px;
+        }
+      }
+    }
+  }
+}
+
+@include mixins.responsive("sm-devices") {
+  .testimonials-section {
+    .testimonial-wrapper {
+      img {
+        width: 180px;
+        z-index: 2;
+        margin-left: 18px;
+        position: relative;
+        margin-bottom: -80px;
+        height: 180px;
+        border-radius: 12px 12px 0 0;
+      }
+      .testimonial-content {
+        padding: functions.rem(110) functions.rem(20) functions.rem(50);
+        background-position: calc(100% - 41px) 32px;
+        border-radius: 12px;
+      }
+    }
+  }
+}

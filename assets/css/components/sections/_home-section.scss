@@ -1,0 +1,225 @@
+@use "abstracts/mixins";
+@use "abstracts/colors";
+@use "abstracts/functions";
+@use "abstracts/variables";
+.home-section {
+  padding: functions.rem(50) 0 functions.rem(70) 0;
+  .home-left-content {
+    h1 {
+      font-size: functions.rem(variables.$font-size-h1);
+      font-weight: 900;
+      letter-spacing: 3px;
+      margin-bottom: functions.rem(8);
+      font-family: "Montserrat-Bold";
+      color: transparent;
+      -webkit-text-stroke: 0.5px colors.$accent-light-color;
+      span {
+        color: colors.$accent-light-color;
+      }
+    }
+  }
+  .home-right-content {
+    background: linear-gradient(180deg, #2a7d6c 0%, rgba(62, 105, 96, 0.62) 100%);
+    padding: functions.rem(56) 0;
+    border-radius: 12px;
+    color: colors.$accent-light-color;
+    max-width: 472px;
+    margin: 0 0 0 auto;
+    h2 {
+      font-size: functions.rem(variables.$font-size-h2);
+      font-weight: 800;
+      text-align: center;
+    }
+
+    .custom-form {
+      background: transparent;
+      padding: 0 functions.rem(28);
+      .input-wrapper {
+        margin-top: functions.rem(21);
+        position: relative;
+        label {
+          position: absolute;
+          color: colors.$faded-elements-color;
+          top: 17px;
+          left: 17px;
+          font-size: 16px;
+          transition: 0.4s ease;
+          cursor: text;
+        }
+        .error-tooltip {
+          color: colors.$accent-light-color;
+          font-size: 13px;
+          line-height: 20px;
+          padding: 12px 10px;
+          position: absolute;
+          left: 0;
+          top: 120%;
+          width: 100%;
+          z-index: 10;
+          background: colors.$form-tooltip-color;
+          border-radius: 8px;
+          box-shadow: 0px 4px 8px 0px #00000014;
+          display: none;
+          &::before {
+            content: "";
+            border-left: 12px solid transparent;
+            border-right: 12px solid transparent;
+            border-bottom: 12px solid colors.$form-tooltip-color;
+            position: absolute;
+            top: -10px;
+            left: 38%;
+            left: 47%;
+            width: 22px;
+            height: 9px;
+          }
+        }
+
+        input,
+        select {
+          font-size: 16px;
+          background-color: transparent;
+          border: 1px solid colors.$faded-elements-color;
+          border-radius: 2px;
+          padding: functions.rem(14);
+          width: 100%;
+          color: colors.$accent-light-color;
+          &:focus-visible {
+            outline: none;
+          }
+          &:active,
+          &:focus {
+            border: 1px solid colors.$accent-light-color;
+            color: colors.$accent-light-color;
+          }
+        }
+
+        select {
+          color: colors.$faded-elements-color;
+          appearance: none;
+          background-image: url(/dist/img/select.icon.png);
+          background-repeat: no-repeat;
+          background-position: right 10px center;
+          option {
+            color: colors.$text-color;
+          }
+        }
+        input:focus + label,
+        input:not(:placeholder-shown) + label {
+          transform: translate(-6px, -27px);
+          font-size: 13px;
+          background: #2d7466;
+          padding: 0 functions.rem(6);
+          color: colors.$accent-light-color;
+          cursor: default;
+        }
+      }
+      .input-wrapper.error input {
+        border: 1px solid colors.$form-tooltip-color;
+      }
+
+      .input-wrapper.error label {
+        color: colors.$form-tooltip-color;
+      }
+
+      .input-wrapper.error input:focus + label,
+      .input-wrapper.error input:not(:placeholder-shown) + label {
+        background-color: #2d7466;
+        color: #ff7777;
+      }
+
+      .submit-button {
+        @include mixins.flex-container(center, center, null, 8px, null);
+        padding: functions.rem(19) 0;
+        border: 1px solid transparent;
+        border-radius: 4px;
+        background-color: transparent;
+        width: 53%;
+        color: colors.$accent-light-color;
+        margin: functions.rem(40) auto 0;
+        cursor: pointer;
+        background-color: colors.$highlighted-elements-color;
+        &:hover {
+          box-shadow: 0px 8px 6px 0px #00000014;
+          transform: translateY(-3px);
+          transition: 0.2s all ease;
+        }
+        &:active {
+          background-color: colors.$btn-active-state-color;
+          transform: translateY(0);
+          box-shadow: 0px 4px 6px 0px #00000014;
+        }
+        .submit-btn {
+          font-size: functions.rem(18);
+        }
+      }
+    }
+  }
+}
+
+@include mixins.responsive("xl-devices") {
+  .home-section {
+    .home-left-content {
+      h1 {
+        font-size: functions.rem(52);
+      }
+    }
+  }
+}
+
+@include mixins.responsive("lg-devices") {
+  .home-section {
+    padding: functions.rem(50) 0 functions.rem(180) 0;
+    .home-left-content {
+      text-align: center;
+      h1 {
+        font-size: functions.rem(64);
+      }
+    }
+    .home-right-content {
+      margin: 0 auto;
+      .custom-form {
+        .submit-button {
+          padding: functions.rem(13) 0;
+        }
+      }
+    }
+  }
+}
+
+@include mixins.responsive("md-devices") {
+  .home-section {
+    .home-left-content {
+      h1 {
+        font-size: functions.rem(68);
+      }
+    }
+  }
+}
+
+@include mixins.responsive("sm-devices") {
+  .home-section {
+    padding: functions.rem(50) 0 functions.rem(250) 0;
+    .home-left-content {
+      padding: 0 functions.rem(10);
+      h1 {
+        font-size: functions.rem(41);
+      }
+    }
+    .home-right-content {
+      max-width: 390px;
+    }
+  }
+}
+
+@include mixins.responsive("xs-devices") {
+  .home-section {
+    .home-right-content {
+      max-width: 328px;
+    }
+    .home-left-content {
+      h1 {
+        font-size: functions.rem(36);
+      }
+    }
+  }
+}

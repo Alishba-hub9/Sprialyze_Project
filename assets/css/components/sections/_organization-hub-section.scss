@@ -1,0 +1,92 @@
+@use "abstracts/functions";
+@use "abstracts/colors";
+@use "abstracts/mixins";
+@use "abstracts/variables";
+
+.organization-hub-section {
+  padding: functions.rem(80) 0 functions.rem(100) 0;
+  .lead-small-paragraph {
+    font-size: variables.$font-size-h5;
+    color: colors.$text-color;
+    font-style: italic;
+    font-family: "Montserrat-Bold";
+    font-weight: 600;
+    line-height: 28px;
+    span {
+      font-family: "Montserrat";
+      font-weight: 300;
+    }
+  }
+
+  p {
+    font-size: 14px;
+    line-height: 24px;
+  }
+
+  a {
+    position: relative;
+    @include mixins.flex-container(center, center, null, 6px, null);
+    padding: 0 functions.rem(26);
+    height: 96px;
+    font-size: functions.rem(variables.$font-size-h5);
+    font-weight: 600;
+    text-align: center;
+    color: colors.$text-color;
+    line-height: 28px;
+    border: 2px solid #5bc8af;
+    img {
+      visibility: hidden;
+    }
+
+    &:hover {
+      color: colors.$highlighted-elements-color;
+      img {
+        visibility: visible;
+      }
+    }
+
+    &[data-tooltip] {
+      &:hover::after {
+        content: attr(data-tooltip);
+        position: absolute;
+        width: 90%;
+        top: 105px;
+        padding: functions.rem(15);
+        text-align: left;
+        background-color: colors.$tooltips-bg-color;
+        color: colors.$accent-light-color;
+        border-radius: 11px;
+        font-size: functions.rem(variables.$font-size-xxs);
+        font-weight: 400;
+        z-index: 10;
+        line-height: 20px;
+      }
+      &:hover::before {
+        content: "";
+        position: absolute;
+        bottom: -15%;
+        border-left: 14px solid transparent;
+        border-right: 14px solid transparent;
+        border-bottom: 11px solid colors.$tooltips-bg-color;
+        z-index: 10;
+      }
+    }
+  }
+}
+
+@include mixins.responsive("md-devices") {
+  .organization-hub-section {
+    a {
+      padding: 0 functions.rem(12);
+      font-size: functions.rem(18);
+    }
+  }
+}
+
+@include mixins.responsive("xs-devices") {
+  .organization-hub-section {
+    a {
+      padding: 0 functions.rem(22);
+    }
+  }
+}

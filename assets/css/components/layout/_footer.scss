@@ -1,0 +1,27 @@
+@use "abstracts/colors";
+@use "abstracts/functions";
+@use "abstracts/mixins";
+
+footer {
+  padding: functions.rem(30) 0;
+  background-color: colors.$faded-elements-color;
+  a,
+  p {
+    color: #757575;
+  }
+  p {
+    line-height: 24px;
+  }
+  .footer-links {
+    text-align: end;
+  }
+}
+
+@include mixins.responsive("lg-devices") {
+  footer {
+    p,
+    .footer-links {
+      text-align: center;
+    }
+  }
+}

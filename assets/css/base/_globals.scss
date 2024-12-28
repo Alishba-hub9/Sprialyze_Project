@@ -1,0 +1,102 @@
+@use "sass:color";
+@use "abstracts/functions";
+@use "abstracts/variables";
+@use "abstracts/colors";
+@use "abstracts/mixins";
+
+html,
+body {
+  font-family: "Montserrat";
+  font-size: functions.rem(variables.$base-font-size);
+  overflow-x: hidden;
+  h3 {
+    font-size: functions.rem(variables.$font-size-h3);
+    color: colors.$accent-light-color;
+  }
+  h5 {
+    font-size: functions.rem(variables.$font-size-h5);
+    color: colors.$faded-elements-color;
+    line-height: 28px;
+  }
+  .heading-separator {
+    border: 1px solid #eaeaea;
+    height: 0;
+    width: 100%;
+  }
+}
+
+a {
+  text-decoration: none;
+}
+
+.content-showcase-section,
+.organization-hub-section {
+  h1 {
+    font-size: functions.rem(36);
+    font-weight: 900;
+    font-family: "Montserrat-Bold";
+    color: colors.$text-color;
+    span {
+      color: transparent;
+      -webkit-text-stroke: 1px colors.$text-color;
+      margin-right: 5px;
+    }
+  }
+}
+
+@include mixins.responsive("lg-devices") {
+  html,
+  body {
+    font-size: functions.rem(16);
+    h5 {
+      font-size: functions.rem(18);
+    }
+    .content-showcase-section,
+    .organization-hub-section {
+      h1 {
+        font-size: functions.rem(32);
+      }
+    }
+  }
+}
+
+@include mixins.responsive("md-devices") {
+  html,
+  body {
+    font-size: functions.rem(15);
+    h5 {
+      font-size: functions.rem(18);
+    }
+    .content-showcase-section,
+    .organization-hub-section {
+      h1 {
+        font-size: functions.rem(36);
+      }
+    }
+  }
+}
+
+@include mixins.responsive("sm-devices") {
+  html,
+  body {
+    font-size: functions.rem(14);
+    h5 {
+      font-size: functions.rem(18);
+    }
+    .content-showcase-section,
+    .organization-hub-section {
+      h1 {
+        font-size: functions.rem(27);
+      }
+    }
+  }
+}
+
+@include mixins.responsive("xs-devices") {
+  .content-showcase-section,
+  .organization-hub-section {
+    h1 {
+      font-size: functions.rem(3);
+    }
+  }
+}
