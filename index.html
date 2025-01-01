@@ -9,23 +9,18 @@
   </head>
   <body>
     <section class="landing-section">
-      <img src="dist/img/darker-curve.png" alt="" class="darker-curve-home d-none d-sm-block" />
-      <img src="dist/img/sm-home-darker-curve.png" alt="" class="sm-darker-curve-home d-block d-sm-none" />
-      <div class="container">
+        <header>
         <nav class="navbar navbar-expand-sm landing-navbar-wrapper">
+          <div class="container">
           <a class="navbar-logo" href="javascript:void(0)">
             <img src="dist/img/header-main-logo.png" alt="header-main-logo" class="img-fluid" />
           </a>
-          <button
-            class="navbar-toggler navbar-burger"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarNav"
-            aria-controls="navbarNav"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon fa fa-bars"></span>
+          <button class="navbar-burger collapsed d-flex d-sm-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-open">
+                <span></span>
+                <span></span>
+                <span></span>
+              </span>
           </button>
           <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
             <ul class="navbar-nav align-items-center">
@@ -38,14 +33,17 @@
               <li class="navbar-item">
                 <a class="navbar-link" href="javascript:void(0)">CONTACT</a>
               </li>
-              <li class="vl-nav d-lg-block d-sm-none p-0 d-none"></li>
               <li class="navbar-item">
-                <a class="navbar-link" href="javascript:void(0)">CALL NOW FOR A CONSULT <span>XXX.XXX.XXXX</span></a>
+                CALL NOW FOR A CONSULT 
+                <a class="navbar-link" href="javascript:void(0)">XXX.XXX.XXXX</a>
               </li>
             </ul>
           </div>
+          </div>
         </nav>
+        </header>
         <div class="home-section">
+          <div class="container">
           <div class="row align-items-center gy-5">
             <div class="col-lg-6">
               <div class="home-left-content">
@@ -109,8 +107,11 @@
               </div>
             </div>
           </div>
+          </div>
         </div>
       </div>
+      <img src="dist/img/darker-curve.png" alt="" class="darker-curve-home d-none d-sm-block" />
+      <img src="dist/img/sm-home-darker-curve.png" alt="" class="sm-darker-curve-home d-block d-sm-none" />
     </section>
     <section class="content-showcase-section">
       <img src="dist/img/lighter-curve-showcase.png" alt="" class="lighter-curve-showcase d-none d-sm-block" />
