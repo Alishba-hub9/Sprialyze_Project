@@ -18,7 +18,9 @@
     font-weight: 400;
   }
   .cta-btn {
-    @include mixins.flex-container(center, center, null, 8px, null);
+    display: flex;
+    justify-content: center;
+    gap: 8px;
     border: 2px solid colors.$highlighted-elements-color;
     padding: functions.rem(15) 0;
     margin-top: functions.rem(18);

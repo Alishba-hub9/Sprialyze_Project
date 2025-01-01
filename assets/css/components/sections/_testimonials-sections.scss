@@ -72,7 +72,9 @@
     }
   }
   .testimonial-wrapper {
-    @include mixins.flex-container(center, center, null, 38px, null);
+    display: flex;
+    justify-content: center;
+    gap: 38px;
     position: relative;
     border-radius: 20px;
     overflow-x: hidden;
@@ -81,7 +83,10 @@
       object-fit: cover;
     }
     .testimonial-content {
-      @include mixins.flex-container(center, null, column, 8px, null);
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      gap: 8px;
       height: 100%;
       border: 1px solid transparent;
       background-color: colors.$darker-sections-bg;

@@ -30,7 +30,10 @@
 
   a {
     position: relative;
-    @include mixins.flex-container(center, center, null, 6px, null);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
     padding: 0 functions.rem(26);
     height: 96px;
     font-size: functions.rem(variables.$font-size-h5);

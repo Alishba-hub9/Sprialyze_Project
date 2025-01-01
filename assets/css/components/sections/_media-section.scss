@@ -72,7 +72,9 @@
       }
     }
     .media-content-about {
-      @include mixins.flex-container(null, baseline, null, 40px, null);
+      display: flex;
+      align-items: baseline;
+      gap: 40px;
       margin-bottom: functions.rem(30);
       h3 {
         font-weight: 600;

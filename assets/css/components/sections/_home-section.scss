@@ -128,7 +128,10 @@
       }
 
       .submit-button {
-        @include mixins.flex-container(center, center, null, 8px, null);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
         padding: functions.rem(19) 0;
         border: 1px solid transparent;
         border-radius: 4px;

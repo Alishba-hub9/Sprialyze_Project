@@ -1,14 +1,4 @@
 @use "../abstracts/functions";
-
-@mixin flex-container($justify, $align, $direction, $gap, $wrap) {
-  display: flex;
-  justify-content: $justify;
-  align-items: $align;
-  flex-direction: $direction;
-  gap: $gap;
-  flex-wrap: $wrap;
-}
-
 @mixin responsive($device) {
   @if $device == "xl-devices" {
     @media (max-width: 1200px) {
