@@ -13,6 +13,45 @@
     background-image: url(/dist/img/header-main-logo.png);
     background-repeat: no-repeat;
     background-position: bottom 30px right 28px;
+    position: relative;
+    .media-popup-btn {
+      border-radius: 50%;
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      bottom: 0;
+      width: 200px;
+      height: 200px;
+      margin: auto;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: width 0.3s ease, height 0.3s ease;
+
+      &:hover {
+        width: 228px;
+        height: 228px;
+        transform: scale(1);
+      }
+
+      .popup-inner-circle {
+        position: absolute;
+        border-radius: 50%;
+        transition: 0.3s all ease;
+        pointer-events: none;
+        background-color: rgba(colors.$highlighted-elements-color, 0.8);
+        border: 2px solid colors.$accent-light-color;
+        width: 154px;
+        height: 154px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
   }
   .media-section-img {
     position: relative;
@@ -40,34 +79,6 @@
       }
     }
   }
-  .border-media-popup {
-    position: absolute;
-    top: calc(50% - 100px);
-    right: calc(13% + 20px);
-    border: 2px solid rgba(255, 255, 255, 0.3);
-    border-radius: 50%;
-    padding: 98px;
-    transition: 0.3s all ease;
-    pointer-events: none;
-  }
-
-  .media-popup-btn {
-    background-color: rgba(colors.$highlighted-elements-color, 0.8);
-    border: 2px solid colors.$accent-light-color;
-    padding: 55px 59px;
-    border-radius: 50%;
-    position: absolute;
-    top: calc(50% - 78px);
-    right: calc(13% + 43px);
-    z-index: 10;
-    cursor: pointer;
-
-    &:hover {
-      + .border-media-popup {
-        transform: scale(1.14);
-      }
-    }
-  }
 }
 
 @include mixins.responsive("xl-devices") {
@@ -89,22 +100,17 @@
     background-image: url(/dist/img/lg-media-dark-curve.png), url(/dist/img/lg-media-light-curve.png);
     background-repeat: no-repeat;
     background-size: 100% 52%, 100% 54%;
-    .media-with-logo {
-      background-position: center bottom 25px;
-    }
-    .media-popup-btn {
-      top: calc(50% - 78px);
-      right: calc(50% - 80px);
-    }
-    .border-media-popup {
-      top: calc(50% - 102px);
-      right: calc(50% - 103px);
-    }
     .media-content-wrapper {
-      padding: functions.rem(80) functions.rem(30) functions.rem(20);
+      padding: functions.rem(80) functions.rem(60) functions.rem(0);
       h2 {
         text-align: center;
         font-size: functions.rem(44);
+      }
+    }
+    .media-with-logo {
+      background-position: center bottom 25px;
+      .media-popup-btn {
+        margin: functions.rem(75) auto 0;
       }
     }
   }
@@ -113,9 +119,14 @@
 @include mixins.responsive("md-devices") {
   .media-section {
     .media-content-wrapper {
-      padding: functions.rem(50) functions.rem(10) functions.rem(40);
+      padding: functions.rem(60) functions.rem(35) functions.rem(0);
       h2 {
         font-size: functions.rem(36);
+      }
+    }
+    .media-with-logo {
+      .media-popup-btn {
+        margin: functions.rem(-20) auto 0;
       }
     }
   }
@@ -125,34 +136,31 @@
   .media-section {
     background-size: 100% 57%, 100% 59%;
     .media-content-wrapper {
-      padding: functions.rem(30) functions.rem(12) functions.rem(15);
+      padding: functions.rem(30) functions.rem(30) functions.rem(0);
       .media-content-about {
         gap: 15px;
       }
     }
-    .media-popup-btn {
-      padding: 28px 31px;
-      top: calc(58% - 100px);
-      right: calc(58% - 103px);
-    }
-    .border-media-popup {
-      padding: 62px;
-      top: calc(58% - 118px);
-      right: calc(58% - 120px);
+    .media-with-logo {
+      .media-popup-btn {
+        width: 128px;
+        height: 128px;
+        margin: 2rem auto;
+        &:hover {
+          width: 150px;
+          height: 150px;
+        }
+        .popup-inner-circle {
+          width: 98px;
+          height: 98px;
+        }
+      }
     }
   }
 }
 
 @include mixins.responsive("xs-devices") {
   .media-section {
-    background-size: 100% 69%, 100% 71%;
-    .border-media-popup {
-      top: calc(75% - 118px);
-      right: calc(62% - 122px);
-    }
-    .media-popup-btn {
-      top: calc(77% - 118px);
-      right: calc(65% - 120px);
-    }
+    background-size: 100% 73%, 100% 76%;
   }
 }
