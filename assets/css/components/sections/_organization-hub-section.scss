@@ -5,6 +5,11 @@
 
 .organization-hub-section {
   padding: functions.rem(80) 0 functions.rem(100) 0;
+  h1 {
+    .transparent-text {
+      background-color: colors.$accent-light-color;
+    }
+  }
   .lead-small-paragraph {
     font-size: variables.$font-size-h5;
     color: colors.$text-color;
