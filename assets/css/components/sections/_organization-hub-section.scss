@@ -68,6 +68,7 @@
         font-weight: 400;
         z-index: 10;
         line-height: 20px;
+        pointer-events: none;
       }
       &:hover::before {
         content: "";
@@ -77,6 +78,7 @@
         border-right: 14px solid transparent;
         border-bottom: 11px solid colors.$tooltips-bg-color;
         z-index: 10;
+        pointer-events: none;
       }
     }
   }
