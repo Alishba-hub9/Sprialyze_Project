@@ -96,6 +96,9 @@ header {
         li:nth-last-child(1) {
           border-left: none;
         }
+        li:nth-child(3){
+          padding: 0 functions.rem(0) 0 0;
+        }
       }
     }
   }
@@ -106,10 +109,14 @@ header {
     .landing-navbar-wrapper {
       ul {
         display: block;
-        padding: functions.rem(10) 0;
+        padding: functions.rem(15) 0;
         background-color: colors.$darker-sections-bg;
+        margin-top: functions.rem(10);
         li {
-          margin-bottom: functions.rem(10);
+          margin-bottom: functions.rem(20);
+        }
+        li:nth-child(3){
+          padding: 0 0 0 functions.rem(18);
         }
       }
     }
