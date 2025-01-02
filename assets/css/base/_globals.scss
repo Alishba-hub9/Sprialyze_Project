@@ -54,6 +54,10 @@ a {
       z-index: 0;
     }
   }
+  p{
+    font-size: functions.rem(14);
+    line-height: 24px;
+  }
 }
 
 @include mixins.responsive("lg-devices") {
@@ -107,6 +111,9 @@ a {
         .transparent-text {
           background-color: colors.$accent-light-color;
         }
+      }
+      p{
+        line-height: 20px;
       }
     }
   }
