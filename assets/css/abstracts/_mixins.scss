@@ -22,4 +22,9 @@
       @content;
     }
   }
+  @else if $device == "xxs-devices" {
+    @media (max-width: 370px) {
+      @content;
+    }
+  }
 }
