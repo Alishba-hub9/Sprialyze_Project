@@ -171,7 +171,7 @@
 
 @include mixins.responsive("lg-devices") {
   .home-section {
-    padding: functions.rem(130) 0 functions.rem(180) 0;
+    padding: functions.rem(130) 0;
     .home-left-content {
       text-align: center;
       h1 {
@@ -201,7 +201,7 @@
 
 @include mixins.responsive("sm-devices") {
   .home-section {
-    padding: functions.rem(100) 0 functions.rem(250) 0;
+    padding: functions.rem(100) 0;
     .home-left-content {
       padding: 0 functions.rem(10);
       h1 {
@@ -216,7 +216,6 @@
 
 @include mixins.responsive("xs-devices") {
   .home-section {
-    padding: functions.rem(100) 0 functions.rem(200) 0;
     .home-right-content {
       max-width: 328px;
     }
