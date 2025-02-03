@@ -119,12 +119,16 @@
   .media-section {
     .watch-vid-wrapper {
       .media-content-wrapper {
-        padding-left: functions.rem(30);
+        padding-left: functions.rem(35);
         h2 {
           font-size: functions.rem(40);
         }
         h3 {
           font-size: functions.rem(16);
+        }
+        .media-content-about{
+          gap: 25px;
+          margin-bottom: functions.rem(18);
         }
       }
     }

@@ -81,6 +81,9 @@
     img {
       height: 100%;
       object-fit: cover;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+      border-top-left-radius: 12px;
+      border-bottom-left-radius: 12px;
     }
     .testimonial-content {
       display: flex;
@@ -94,6 +97,9 @@
       background-image: url(/dist/img/inverted-commas-testimonials.png);
       background-position: calc(100% - 60px) 40px;
       background-repeat: no-repeat;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+      border-top-right-radius: 12px;
+      border-bottom-right-radius: 12px;
       h3 {
         font-weight: 800;
       }

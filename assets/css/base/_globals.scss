@@ -18,6 +18,13 @@ body {
     color: colors.$faded-elements-color;
     line-height: 28px;
   }
+  p,
+  h1,
+  h2,
+  h3,
+  h5{
+    pointer-events: none;
+  }
 }
 
 a {
