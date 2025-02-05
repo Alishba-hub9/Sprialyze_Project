@@ -62,28 +62,28 @@
                   <div class="row gx-3">
                     <div class="col-sm-6">
                       <div class="input-wrapper">
-                        <input type="text" id="first-name" placeholder="" class="required-field" />
+                        <input type="text" id="first-name" placeholder="" name="firstName" class="required-field" />
                         <label for="first-name">First Name</label>
                         <span class="error-tooltip">This field can’t be empty. Please fill it in.</span>
                       </div>
                     </div>
                     <div class="col-sm-6">
                       <div class="input-wrapper">
-                        <input type="text" id="last-name" placeholder="" class="required-field" />
+                        <input type="text" id="last-name" name="lastName" placeholder="" class="required-field" />
                         <label for="last-name">Last Name</label>
                         <span class="error-tooltip">This field can’t be empty. Please fill it in.</span>
                       </div>
                     </div>
                     <div class="col-sm-6">
                       <div class="input-wrapper">
-                        <input type="email" id="email" placeholder="" class="required-field" />
+                        <input type="email" id="email" placeholder="" name="email" class="required-field" />
                         <label for="email">Business Email</label>
                         <span class="error-tooltip">This field can’t be empty. Please fill it in.</span>
                       </div>
                     </div>
                     <div class="col-sm-6">
                       <div class="input-wrapper">
-                        <input type="text" id="company" placeholder="" class="required-field" />
+                        <input type="text" id="company" placeholder="" class="required-field" name="company"/>
                         <label for="company">Company</label>
                         <span class="error-tooltip">This field can’t be empty. Please fill it in.</span>
                       </div>
@@ -91,7 +91,7 @@
                   </div>
 
                   <div class="input-wrapper">
-                    <select>
+                    <select name="country" class="required-field">
                       <option value="" disabled selected hidden>Country</option>
                       <option value="us">United States</option>
                       <option value="ca">Canada</option>
@@ -172,62 +172,15 @@
       </div>
     </section>
     <section class="testimonials-section">
+      <div class="d-flex justify-content-center">
+        <div class="spinner-border" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+      </div>
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-lg-10">
-            <div class="owl-carousel testimonials-carousel">
-              <div class="item testimonial-wrapper">
-                <div class="row w-100">
-                  <div class="col-12 col-sm-4">
-                    <img src="dist/img/testimonials-img-1.png" alt="client 1" />
-                  </div>
-                  <div class="col-12 col-sm-8">
-                    <div class="testimonial-content">
-                      <h3>Abbie Harvey</h3>
-                      <h5>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation. Lorem ipsum
-                        dolor sit amet, consectetur!
-                      </h5>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="item testimonial-wrapper">
-                <div class="row w-100">
-                  <div class="col-12 col-sm-4">
-                    <img src="dist/img/testimonials-img-2.png" alt="client 2" />
-                  </div>
-                  <div class="col-12 col-sm-8">
-                    <div class="testimonial-content">
-                      <h3>Tom Hiddlestone</h3>
-                      <h5>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation. Lorem ipsum
-                        dolor sit amet, consectetur!
-                      </h5>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="item testimonial-wrapper">
-                <div class="row w-100">
-                  <div class="col-12 col-sm-4">
-                    <img src="dist/img/testimonials-img-3.png" alt="client 3" />
-                  </div>
-                  <div class="col-12 col-sm-8">
-                    <div class="testimonial-content">
-                      <h3>Taylor Swift</h3>
-                      <h5>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation. Lorem ipsum
-                        dolor sit amet, consectetur!
-                      </h5>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <div class="owl-carousel testimonials-carousel"></div>
           </div>
         </div>
       </div>
