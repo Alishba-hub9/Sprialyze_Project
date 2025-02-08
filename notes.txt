@@ -1,0 +1,81 @@
+vid section center
+padding home-section
+svg in home
+form trigger focus
+lorem ipsum bold in organize
+mouse on tooltip
+navbar
+breakpoint for media
+console.log
+reset.scss above
+error
+variables remove in form
+
+
+
+padding home-section
+svg in home..
+stroke color dark..
+mouse on tooltip hover..
+navbar..
+font and gaping in contentshowcase section..
+br for media..
+index only instead of scss..
+
+
+
+gap end in vid sec h2
+boxshadow
+pointer events
+
+
+todo app
+ajax opyions jquery
+promise research
+api calls from frontend and ajax calls then catch(parameters r method)
+await async
+.map detailed research 
+get post patch delete put
+
+const getUsersTemplate = (name, description) => `
+<div class="item testimonial-wrapper">
+              <div class="row">
+                <div class="col-12 col-sm-4">
+                  <img src="dist/img/testimonials-img-1.png" alt="client 1" />
+                </div>
+                <div class="col-12 col-sm-8">
+                  <div class="testimonial-content">
+                    <h3>${name}</h3>
+                    <h5>${description}</h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+            `
+
+
+async function getUsers() {
+  const usersApiUrl = 'https://jsonplaceholder.typicode.com/users';
+
+  const users = await $.ajax(usersApiUrl, {
+    method: 'POST',
+    data: {
+      firstName: firstName,
+    }
+  });
+  const usersHtmlArr = users.map(user => getUsersTemplate(user.name, user.company.catchPhrase))
+  const usersHtml = usersHtmlArr.join(' ');
+  $('.testimonials-carousel').html(usersHtml)
+
+  initTestimonialsCarousel();
+}
+
+getUsers();
+
+Create record in db.json is done...
+On a new page /admin.html, show all the records from db.json in a table
+Table should have all the column from the data. Apart from it, there should be one more column called actions. Actions should be edit and delete
+Clicking delete will simply delete the record from the db.json
+Clicking Edit will show the hidden form and populate it with data.
+Wwe should be able to update the data and click Update.
+On clicking update, form will get hidden and the above table will be updated

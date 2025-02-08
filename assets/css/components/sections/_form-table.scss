@@ -1,0 +1,156 @@
+@use "abstracts/colors";
+@use "abstracts/functions";
+
+.wrapper-form {
+  pointer-events: none;
+  h1 {
+    font-family: "Montserrat-Bold";
+    margin: functions.rem(16) 0;
+  }
+  .form-table {
+    border: 1px solid #2d7466;
+    box-shadow: 2px -1px 12px #d1caca;
+    thead {
+      font-size: 18px;
+      tr {
+        th {
+          background-color: #2d7466;
+          color: colors.$accent-light-color;
+          padding: functions.rem(15);
+        }
+      }
+    }
+    tbody {
+      tr {
+        td {
+          padding: functions.rem(10) functions.rem(15);
+          button {
+            border: none;
+            background-color: transparent;
+            pointer-events: auto;
+          }
+          .edit-btn {
+            svg {
+              color: #f1e542;
+            }
+          }
+          .delete-btn {
+            svg {
+              color: #ff0000;
+            }
+          }
+        }
+      }
+    }
+  }
+  .edit-data-form {
+    display: none;
+    background: #2d7466;
+    max-width: 570px;
+    border-radius: 18px;
+    padding: functions.rem(30) functions.rem(33);
+    pointer-events: auto;
+    .input-wrapper {
+      margin-top: functions.rem(21);
+      position: relative;
+      label {
+        position: absolute;
+        color: colors.$faded-elements-color;
+        top: 17px;
+        left: 17px;
+        font-size: 16px;
+        transition: 0.4s ease;
+        cursor: text;
+      }
+      .error-tooltip {
+        color: colors.$accent-light-color;
+        font-size: 13px;
+        line-height: 20px;
+        padding: 12px 10px;
+        position: absolute;
+        left: 0;
+        top: 120%;
+        width: 100%;
+        z-index: 10;
+        background: colors.$form-tooltip-color;
+        border-radius: 8px;
+        box-shadow: 0px 4px 8px 0px #00000014;
+        display: none;
+        &::before {
+          content: "";
+          border-left: 12px solid transparent;
+          border-right: 12px solid transparent;
+          border-bottom: 12px solid colors.$form-tooltip-color;
+          position: absolute;
+          top: -10px;
+          left: 38%;
+          left: 47%;
+          width: 22px;
+          height: 9px;
+        }
+      }
+
+      input,
+      select {
+        font-size: 16px;
+        background-color: transparent;
+        border: 1px solid colors.$faded-elements-color;
+        border-radius: 2px;
+        padding: functions.rem(14);
+        width: 100%;
+        color: colors.$accent-light-color;
+        &:focus-visible {
+          outline: none;
+        }
+        &:active,
+        &:focus {
+          border: 1px solid colors.$accent-light-color;
+          color: colors.$accent-light-color;
+        }
+      }
+
+      select {
+        color: colors.$faded-elements-color;
+        appearance: none;
+        background-image: url(/dist/img/select.icon.png);
+        background-repeat: no-repeat;
+        background-position: right 10px center;
+        option {
+          color: colors.$text-color;
+        }
+      }
+      input:focus + label,
+      input:not(:placeholder-shown) + label {
+        transform: translate(-6px, -27px);
+        font-size: 13px;
+        background: #2d7466;
+        padding: 0 functions.rem(6);
+        color: colors.$accent-light-color;
+        cursor: default;
+      }
+    }
+    .input-wrapper.error input {
+      border: 1px solid colors.$form-tooltip-color;
+    }
+
+    .input-wrapper.error label {
+      color: colors.$form-tooltip-color;
+    }
+
+    .input-wrapper.error input:focus + label,
+    .input-wrapper.error input:not(:placeholder-shown) + label {
+      background-color: #2d7466;
+      color: #ff7777;
+    }
+    .action-btns {
+      margin: functions.rem(30) auto;
+      .update-button,
+      .cancel-button {
+        border: 1px solid transparent;
+        background-color: colors.$highlighted-elements-color;
+        padding: functions.rem(16) functions.rem(35);
+        border-radius: 10px;
+      }
+    }
+  }
+}

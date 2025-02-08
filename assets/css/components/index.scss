@@ -1,8 +1,10 @@
 @use 'layout/header';
 @use 'layout/footer';
+@use 'layout/form';
 @use 'sections/landing-section';
 @use 'sections/home-section';
 @use 'sections/content-showcase-section';
 @use 'sections/testimonials-sections';
 @use 'sections/organization-hub-section';
 @use 'sections/media-section';
+@use 'sections/form-table';
